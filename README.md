@@ -14,6 +14,13 @@ Using a spare keyfob and a wemos D1 Mini microcontroller, create a semi-permenan
 
 # Development
 
+Assuming you are using direnv, setup an .envrc file with environment variables to load. 
+
+```
+ls /dev/cu*   #note the address of the usb device
+echo 'export USB_ADDRESS=/dev/cu.usbserial-xxxx' > .envrc
+```
+
 `make run-ota`
 
 Then navigate to [http://f150.local](http://f150.local) on the network
