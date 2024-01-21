@@ -1,0 +1,32 @@
+---
+substitutions:
+  name: f150
+  friendly_name: f150
+  log_level: INFO   # DEBUG, INFO, WARNING, ERROR, NONE
+
+logger:
+  baud_rate: 115200
+api:
+ota:
+
+# esp32:
+#   board: lolin_s2_mini
+
+esp8266:
+  board: d1_mini
+improv_serial:
+
+esphome:
+  name: ${name}
+  friendly_name: ${friendly_name}
+
+packages:
+  lock: !include conf.d/buttons.yaml
+  wifi: !include conf.d/wifi.yaml
+  web_server: !include conf.d/web_server.yaml
+
+  # Uncomment this for development
+  # Note: Peforming subsequent uploads using the OTA will preserve the wifi settings
+  # Making having to enter the wifi credentials every time unnecessary
+  debug: !include conf.d/debug.yaml
+

@@ -1,0 +1,57 @@
+---
+button:
+  - platform: template
+    name: Remote Start
+    icon: mdi:engine
+    on_press:
+      - logger.log: Locking Truck
+      - output.turn_on: truck_lock
+      - delay: 500ms
+      - output.turn_off: truck_lock
+      - delay: 100ms
+      - repeat:
+          count: 2
+          sequence:
+            - logger.log: Pressing Truck Start
+            - output.turn_on: truck_start
+            - delay: 250ms
+            - output.turn_off: truck_start
+            - delay: 500ms
+      - delay: 1s
+      - logger.log: Unlocking truck
+      - output.turn_on: truck_unlock
+      - delay: 250ms
+      - output.turn_off: truck_unlock
+      - logger.log: Truck Started
+  - platform: template
+    name: Unlock
+    icon: mdi:unlock
+    on_press:
+      - logger.log: Unlocking Truck
+      - output.turn_on: truck_unlock
+      - delay: 500ms
+      - output.turn_off: truck_unlock
+  - platform: template
+    name: Lock
+    icon: mdi:lock
+    on_press:
+      - logger.log: Locking Truck
+      - output.turn_on: truck_lock
+      - delay: 500ms
+      - output.turn_off: truck_lock
+
+output:
+  - platform: gpio
+    pin: D5
+    id: truck_lock
+    inverted: true
+
+  - platform: gpio
+    pin: D6
+    id: truck_unlock
+    inverted: true
+
+  - platform: gpio
+    pin: D7
+    id: truck_start
+    inverted: true
