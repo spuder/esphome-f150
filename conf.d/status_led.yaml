@@ -1,0 +1,10 @@
+# The ESPHome status_led primitive is not very useful
+# instead we use the onboard LED as a configurable LED that can be called
+# when activity is happening (e.g. reading temperature, etc)
+switch:
+  - platform: gpio
+    id: builtin_led
+    pin: 2
+    inverted: true
+    restore_mode: ALWAYS_OFF
+

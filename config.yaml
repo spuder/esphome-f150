@@ -24,6 +24,7 @@ packages:
   lock: !include conf.d/buttons.yaml
   wifi: !include conf.d/wifi.yaml
   web_server: !include conf.d/web_server.yaml
+  status_led: !include conf.d/status_led.yaml
 
   # Uncomment this for development
   # Note: Peforming subsequent uploads using the OTA will preserve the wifi settings

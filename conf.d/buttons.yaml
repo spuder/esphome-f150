@@ -5,40 +5,46 @@ button:
     icon: mdi:engine
     on_press:
       - logger.log: Locking Truck
+      - switch.turn_on: builtin_led
       - output.turn_on: truck_lock
-      - delay: 500ms
+      - delay: 300ms
       - output.turn_off: truck_lock
-      - delay: 100ms
+      - delay: 500ms
       - repeat:
           count: 2
-          sequence:
+          then:
             - logger.log: Pressing Truck Start
             - output.turn_on: truck_start
-            - delay: 250ms
+            - delay: 300ms
             - output.turn_off: truck_start
             - delay: 500ms
       - delay: 1s
       - logger.log: Unlocking truck
       - output.turn_on: truck_unlock
-      - delay: 250ms
+      - delay: 300ms
       - output.turn_off: truck_unlock
+      - switch.turn_off: builtin_led
       - logger.log: Truck Started
   - platform: template
     name: Unlock
     icon: mdi:unlock
     on_press:
       - logger.log: Unlocking Truck
+      - switch.turn_on: builtin_led
       - output.turn_on: truck_unlock
-      - delay: 500ms
+      - delay: 300ms
       - output.turn_off: truck_unlock
+      - switch.turn_off: builtin_led
   - platform: template
     name: Lock
     icon: mdi:lock
     on_press:
       - logger.log: Locking Truck
+      - switch.turn_on: builtin_led
       - output.turn_on: truck_lock
-      - delay: 500ms
+      - delay: 300ms
       - output.turn_off: truck_lock
+      - switch.turn_off: builtin_led
 
 output:
   - platform: gpio
