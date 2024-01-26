@@ -10,7 +10,15 @@ The range of the remote start on a 2014 F150 is abysmal. I often have to walk ou
 
 Using a spare keyfob and a wemos D1 Mini microcontroller, create a semi-permenant remote start beacon that can be stationed near my truck, that can start my truck from my phone/home-assistant. 
 
+The box is placed anywhere that is within range of wifi and the vehicle. 
+
+
+
 ![after](docs/after-diagram.png)
+
+
+**Warning** : Never start a vehicle inside an enclosed space (such as a garage), the CO2 buildup is deadly. Only remotely start a vehile that is outdoors. 
+
 
 ## Hardware
 
@@ -44,6 +52,23 @@ My particular truck has the following sequence to do a remote start
 ![](./docs/IMG_0386.jpeg)
 ![](./docs/IMG_0388.jpg)
 
+## 3d Printing
+
+STL and 3MF files are included in the [3d prints](./3d%20prints/) folder. 
+
+A pre-sliced multi color print for bambu x1c is provided. 
+
+Printed with PETG
+
+| Color | AMS slot | 
+|--- | --- | 
+| black | 1 |
+| clear | 3 |
+| blue | 4 | 
+
+![](./docs/Lid-F150-bambu.png)
+
+
 ## Development
 
 Assuming you are using `direnv`, setup an `.envrc` file with environment variables to load. 
@@ -53,6 +78,26 @@ ls /dev/cu*   #note the address of the usb device
 echo 'export USB_ADDRESS=/dev/cu.usbserial-xxxx' > .envrc
 ```
 
+Make a `secrets.yaml` file
+
+```bash
+touch conf.d/secrets.yaml
+```
+
+Then add the following variables:
+```yaml
+wifi_ssid: "foobar"
+wifi_password: "correct-horse-battery-staple"
+web_username: "admin"
+web_password: "correct-horse-battery-staple"
+```
+
+Then compile and upload the firmware
+
 `make run-ota`
 
 Then navigate to [http://f150.local](http://f150.local) on the network
+
+
+![](./docs/auth.png)  
+![](./docs/screenshot.png)
