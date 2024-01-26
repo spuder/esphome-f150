@@ -5,7 +5,7 @@ light:
     id: neopixel_light
     num_leds: 1
     pin: D3
-    name: leds #TODO: remove to hide from UI
+    #name: leds #TODO: remove to hide from UI
     type: GRB
     effects:
       - addressable_rainbow:

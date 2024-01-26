@@ -17,6 +17,7 @@ Using a spare keyfob and a wemos D1 Mini microcontroller, create a semi-permenan
 - [Additional Key Fobs](https://www.amazon.com/gp/product/B06XS3351F/ref=ewc_pr_img_2?smid=A5K9LFXZIQJ2T&th=1)
 - [PCBs (optional)](https://www.amazon.com/ELEGOO-Prototype-Soldering-Compatible-Arduino/dp/B072Z7Y19F/ref=sr_1_1?crid=2MVKI8RNQ46D1&keywords=pcb&qid=1706154816&sprefix=pc%2Caps%2C190&sr=8-1)
 - [Wimos D1 mini ESP8266](https://www.amazon.com/Aceirmc-ESP8266-Internet-Development-Compatible/dp/B07V84VWSM/ref=sr_1_3?crid=2LTTXJFAVP1XG&keywords=wemos+d1+mini&qid=1706154840&sprefix=wemos+d1+mini%2Caps%2C132&sr=8-3)
+- [Any 5V WS2812x Led strip or led](https://www.amazon.com/ALITOVE-100pcs-WS2812B-Addressable-Arduino/dp/B01D1FFVOA/ref=sr_1_9?crid=PUPYNE639ZOX&keywords=addressable+led&qid=1706237299&sprefix=addressable+le%2Caps%2C212&sr=8-9)
 
 Video on programming [f150 keyfobs](https://www.youtube.com/watch?v=c2BaSCcAnhg).
 
@@ -45,7 +46,7 @@ My particular truck has the following sequence to do a remote start
 
 ## Development
 
-Assuming you are using direnv, setup an .envrc file with environment variables to load. 
+Assuming you are using `direnv`, setup an `.envrc` file with environment variables to load. 
 
 ```
 ls /dev/cu*   #note the address of the usb device
