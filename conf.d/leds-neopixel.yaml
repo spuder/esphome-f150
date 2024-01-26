@@ -1,0 +1,14 @@
+---
+light:
+  - platform: neopixelbus
+    variant: ws2812x
+    id: neopixel_light
+    num_leds: 1
+    pin: D3
+    name: leds #TODO: remove to hide from UI
+    type: GRB
+    effects:
+      - addressable_rainbow:
+          name: Rainbow Effect
+          speed: 25
+          width: 15

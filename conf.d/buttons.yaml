@@ -5,7 +5,9 @@ button:
     icon: mdi:engine
     on_press:
       - logger.log: Locking Truck
-      - switch.turn_on: builtin_led
+      - light.turn_on:
+          id: neopixel_light
+          effect: Rainbow Effect
       - output.turn_on: truck_lock
       - delay: 300ms
       - output.turn_off: truck_lock
@@ -23,28 +25,37 @@ button:
       - output.turn_on: truck_unlock
       - delay: 300ms
       - output.turn_off: truck_unlock
-      - switch.turn_off: builtin_led
+      # TODO: Return led color to prevous state
       - logger.log: Truck Started
   - platform: template
     name: Unlock
     icon: mdi:unlock
     on_press:
       - logger.log: Unlocking Truck
-      - switch.turn_on: builtin_led
+      - light.turn_on:
+          id: neopixel_light
+          green: 100%
+          red: 0%
+          blue: 0%
       - output.turn_on: truck_unlock
       - delay: 300ms
       - output.turn_off: truck_unlock
-      - switch.turn_off: builtin_led
+      # TODO: Return led color to prevous state
   - platform: template
     name: Lock
     icon: mdi:lock
     on_press:
+      # Set state to locked
       - logger.log: Locking Truck
-      - switch.turn_on: builtin_led
+      - light.turn_on:
+          id: neopixel_light
+          red: 100%
+          green: 0%
+          blue: 0%
       - output.turn_on: truck_lock
       - delay: 300ms
       - output.turn_off: truck_lock
-      - switch.turn_off: builtin_led
+      # TODO: Return led color to prevous state
 
 output:
   - platform: gpio

@@ -12,7 +12,38 @@ Using a spare keyfob and a wemos D1 Mini microcontroller, create a semi-permenan
 
 ![after](docs/after-diagram.png)
 
-# Development
+## Hardware
+
+- [Additional Key Fobs](https://www.amazon.com/gp/product/B06XS3351F/ref=ewc_pr_img_2?smid=A5K9LFXZIQJ2T&th=1)
+- [PCBs (optional)](https://www.amazon.com/ELEGOO-Prototype-Soldering-Compatible-Arduino/dp/B072Z7Y19F/ref=sr_1_1?crid=2MVKI8RNQ46D1&keywords=pcb&qid=1706154816&sprefix=pc%2Caps%2C190&sr=8-1)
+- [Wimos D1 mini ESP8266](https://www.amazon.com/Aceirmc-ESP8266-Internet-Development-Compatible/dp/B07V84VWSM/ref=sr_1_3?crid=2LTTXJFAVP1XG&keywords=wemos+d1+mini&qid=1706154840&sprefix=wemos+d1+mini%2Caps%2C132&sr=8-3)
+
+Video on programming [f150 keyfobs](https://www.youtube.com/watch?v=c2BaSCcAnhg).
+
+
+## Schematic
+
+My particular keyfob has buttons that pull signal low (gnd) when pressed.
+
+|GPIO| Pin|
+| --- | --- |
+| D5 | Lock |
+| D6 | Unlock |
+| D7 | Start |
+| 2 | Status LED | 
+| D3 | RGB Led | 
+
+
+My particular truck has the following sequence to do a remote start
+1. Press lock button 
+2. Press remote start button twice
+3. (Truck will start)
+4. Press unlock button to enter truck
+
+![](./docs/IMG_0386.jpeg)
+![](./docs/IMG_0388.jpg)
+
+## Development
 
 Assuming you are using direnv, setup an .envrc file with environment variables to load. 
 
