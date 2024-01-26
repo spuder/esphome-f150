@@ -107,6 +107,9 @@ web_password: "correct-horse-battery-staple"
 
 Then compile and upload the firmware
 
+If you are running debug mode, it will join your wifi automatically. 
+If you have debug mode disabled, it will create a new Wifi HotSpot. You can join the hotspot and join it to your wifi using your phone. 
+
 `make run-ota`
 
 Then navigate to [http://f150.local](http://f150.local) on the network
