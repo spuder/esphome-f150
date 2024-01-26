@@ -68,6 +68,19 @@ Printed with PETG
 
 ![](./docs/Lid-F150-bambu.png)
 
+## Leds
+
+The lid is printed with transparent PETG fillament to show the internal Led status. 
+
+```
+Lock = Red
+Unlock = Green
+Start = Rainbow Animation
+Stop = Blue
+```
+
+The LEDs will light up for 10 minutes (the max amount of time an F150 remote start will idle for), then return to white. 
+
 
 ## Development
 
