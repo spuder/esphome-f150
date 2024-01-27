@@ -3,7 +3,7 @@ light:
   - platform: neopixelbus
     variant: ws2812x
     id: neopixel_light
-    num_leds: 1
+    num_leds: 3
     pin: D3
     #name: leds #TODO: remove to hide from UI
     type: GRB

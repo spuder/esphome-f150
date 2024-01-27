@@ -1,7 +1,7 @@
 ---
 button:
   - platform: template
-    name: Remote Start
+    name: START
     icon: mdi:engine
     on_press:
       - logger.log: Locking Truck
@@ -32,7 +32,7 @@ button:
           last_action = millis();
       - logger.log: Truck Started
   - platform: template
-    name: Unlock
+    name: UNLOCK
     icon: mdi:unlock
     on_press:
       - logger.log: Unlocking Truck
@@ -50,7 +50,7 @@ button:
           static auto last_action = millis();
           last_action = millis();
   - platform: template
-    name: Lock
+    name: LOCK
     icon: mdi:lock
     on_press:
       # Set state to locked
@@ -69,7 +69,7 @@ button:
           static auto last_action = millis();
           last_action = millis();
   - platform: template
-    name: Stop
+    name: STOP
     icon: mdi:lock
     on_press:
       # Set state to locked
