@@ -66,7 +66,8 @@ Printed with PETG
 | clear | 3 |
 | blue | 4 | 
 
-![](./docs/Lid-F150-bambu.png)
+![](./docs/3dprint.png)  
+![](./docs/Lid-F150-bambu.png)  
 
 ## Leds
 
