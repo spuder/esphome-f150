@@ -34,7 +34,7 @@ button:
       - logger.log: Truck Started
   - platform: template
     name: UNLOCK
-    icon: mdi:unlock
+    icon: mdi:lock-open
     on_press:
       - logger.log: Unlocking Truck
       - light.turn_off: 

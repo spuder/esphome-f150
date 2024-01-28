@@ -4,7 +4,7 @@
 
 ## Problem
 
-The range of the remote start on a 2014 F150 is abysmal. I often have to walk outside my house just to get the remote start to work. 
+The range of the remote start on a 2014 F150 is abysmal. I often have to walk outside my house just to get the remote start to work. (Even with a fresh battery in the keyfob)
 
 ![before](docs/before-diagram.png)
 
@@ -88,6 +88,14 @@ Stop = Blue
 
 The LEDs will light up for 10 minutes (the max amount of time an F150 remote start will idle for), then return to white. 
 
+## HomeAssistant
+
+If you have the 'esphome' addon installed in HomeAssistant, the device will show up automatically. 
+Once the device is added, it will show up on your dashboard. 
+
+
+![](./docs/homeassistant2.png)
+![](./docs/homeassistant1.png)
 
 ## Development
 
