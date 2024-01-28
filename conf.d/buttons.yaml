@@ -4,7 +4,8 @@ button:
     name: START
     icon: mdi:engine
     on_press:
-      - logger.log: Locking Truck
+      - logger.log: Starting Truck
+      - logger.log: Lock button pressed
       - light.turn_off: 
           id: neopixel_light
       - light.turn_on:
@@ -17,13 +18,13 @@ button:
       - repeat:
           count: 2
           then:
-            - logger.log: Pressing Truck Start
+            - logger.log: Start button pressed
             - output.turn_on: truck_start
             - delay: 300ms
             - output.turn_off: truck_start
             - delay: 500ms
       - delay: 1s
-      - logger.log: Unlocking truck
+      - logger.log: Unlock button pressed
       - output.turn_on: truck_unlock
       - delay: 300ms
       - output.turn_off: truck_unlock
@@ -70,10 +71,9 @@ button:
           last_action = millis();
   - platform: template
     name: STOP
-    icon: mdi:lock
+    icon: mdi:engine-off
     on_press:
-      # Set state to locked
-      - logger.log: Stopping Remote Start
+      - logger.log: Stopping Truck
       - light.turn_off: 
           id: neopixel_light
       - light.turn_on:
