@@ -12,7 +12,7 @@ button:
           id: neopixel_light
           effect: Rainbow Effect
       - output.turn_on: truck_lock
-      - delay: 300ms
+      - delay: 500ms
       - output.turn_off: truck_lock
       - delay: 500ms
       - repeat:
@@ -20,13 +20,13 @@ button:
           then:
             - logger.log: Start button pressed
             - output.turn_on: truck_start
-            - delay: 300ms
+            - delay: 500ms
             - output.turn_off: truck_start
             - delay: 500ms
       - delay: 1s
       - logger.log: Unlock button pressed
       - output.turn_on: truck_unlock
-      - delay: 300ms
+      - delay: 500ms
       - output.turn_off: truck_unlock
       - lambda: |-
           static auto last_action = millis();
@@ -45,7 +45,7 @@ button:
           red: 0%
           blue: 0%
       - output.turn_on: truck_unlock
-      - delay: 300ms
+      - delay: 500ms
       - output.turn_off: truck_unlock
       - lambda: |-
           static auto last_action = millis();
@@ -64,7 +64,7 @@ button:
           green: 0%
           blue: 0%
       - output.turn_on: truck_lock
-      - delay: 300ms
+      - delay: 500ms
       - output.turn_off: truck_lock
       - lambda: |-
           static auto last_action = millis();
@@ -82,7 +82,7 @@ button:
           green: 0%
           blue: 100%
       - output.turn_on: truck_start
-      - delay: 300ms
+      - delay: 500ms
       - output.turn_off: truck_start
       - lambda: |-
           static auto last_action = millis();
